@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio</title>
+
+<style>
+=
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 0;
+    scroll-behavior: smooth; 
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #f6f6f6;;
+    padding: 10px 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background-color: #555;
+    color:white;
+}
+
+
+body > div:first-of-type {
+    padding-top: 60px;
+}
+
+.firstdiv{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    padding:10px 5px;
+    background-color:#f6f6f6;
+}
+.topname{
+    margin-left:20px;
+    font-size:28px;
+    padding-left:80px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.Github, .Linkedin, .EmailId,.leetcode{
+    text-decoration:none;
+    color:black;
+    margin-left:8px;
+}
+.Github:hover, .Linkedin:hover, .EmailId:hover,.leetcode:hover{
+    text-decoration:underline;
+}
+.entiregithub, .entirelinkedin, .entireemailid,.entireleetcode{
+    display:flex;
+    align-items:center;
+    padding:10px 5px;
+    margin-right:20px;
+}
+.githublinkedin{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+.alongwithemail{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.imageandhi{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    padding:10px 5px;
+    margin-right:20px;
+}
+.hi{
+    padding-left:100px;
+    font-size:40px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight:bold;
+    flex:75%;
+}
+.me{
+    flex:25%;
+    width:25%;
+    height:auto;
+    border-radius:50%;
+    margin-right:100px;
+}
+.para{
+    padding-left:100px;
+    margin-right:100px;
+    font-size:20px;
+}
+
+.skill{
+    text-align:center;
+    margin-top:30px;
+}
+.allskills{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    gap:30px;
+    padding:20px;
+    background-color:#f6f6f6;
+    border-radius:10px;
+}
+.allskills div{
+    text-align:center;
+}
+.allskills h1{
+    font-size:20px;
+}
+
+.projecthead{
+    text-align:center;
+}
+.p1,.p2,.p3{
+    text-decoration:none;
+    padding-left:100px;
+}
+.p1d,.p2d,.p3d,.aht{
+    padding-left:10px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.hackathonhead{
+    margin-top:50px;
+    text-align:center;
+}
+.allhackathons{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:30px;
+    background-color:#f6f6f6;
+}
+
+.softskillhead{
+    margin-top:30px;
+    text-align:center;
+}
+.allsoftskills{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:30px;
+    background-color:#f6f6f6;
+    margin-bottom:25px;
+}
+.allsoftskills div{
+    text-align:center;
+}
+.allsoftskills h1{
+    font-size:20px;
+}
+.contactmetext{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    
+}
+.Contact {
+    
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.Contact h1 {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+input, textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    font-size: 16px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    background-color: #333;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+
+@media(max-width: 768px){
+    .contact-section h1{
+        font-size: 28px;
+    }
+
+    input, textarea, button{
+        font-size: 16px;
+    }
+}
+
+
+
+@media (max-width: 992px) {
+    .hi{ font-size:32px; padding-left:40px; }
+    .para{ padding-left:40px; padding-right:40px; font-size:18px; }
+    .me{ width:35%; margin-right:40px; }
+}
+@media (max-width: 768px) {
+    .firstdiv{ flex-direction:column; text-align:center; }
+    .topname{ padding-left:0; }
+    .alongwithemail{ flex-direction:column; gap:10px; }
+    .imageandhi{ flex-direction:column; text-align:center; }
+    .hi{ padding-left:0; font-size:28px; }
+    .para{ padding:0 20px; margin:0; font-size:20px; }
+    .me{ width:50%; margin:20px 0; }
+    .allskills,.allsoftskills,.allhackathons{ flex-direction:column; align-items:center; }
+}
+@media (max-width: 480px) {
+    .hi{ font-size:24px; }
+    .para{ font-size:14px; }
+    .me{ width:70%; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <a href="#skills">Technical Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#hackathons">Hackathons</a>
+    <a href="#softskills">Soft Skills</a>
+    <a href="#contact">Contact Me</a>
+</nav>
+
+<div class="firstdiv">
+    <h1 class="topname">Shirish D S</h1>
+    <div class="alongwithemail">
+        <div class="githublinkedin">
+            <div class="entireleetcode">
+                <img class="leetcodeimage" alt="leetcodeimage" width=35 height=35 src="leetcode.webp">
+                <a href="https://leetcode.com/u/Shirish_D_S/" target="_blank" class="leetcode">LeetCode</a>
+            </div>
+            <div class="entiregithub">
+                <img class="githubimage" alt="githubimage" width=35 height=35 src="github.webp">
+                <a href="https://github.com/d-s-shirish" target="_blank" class="Github">Github</a>
+            </div>
+            <div class="entirelinkedin">
+                <img class="linkedinimage" alt="linkedinimage" width=30 height=30 src="linkedin.png"> 
+                <a href="https://www.linkedin.com/in/shirish-srinivasan-51108b294/" target="_blank" class="Linkedin">LinkedIn</a>
+            </div>
+        </div>    
+        <div class="entireemailid">
+            <img class="mailimage" alt="mailimage" width=30 height=30 src="email.png">
+            <a href="mailto:shirishsrinivasan05@gmail.com" target="_blank" class="EmailId">MailID</a>
+        </div> 
+    </div>       
+</div>
+
+<div class="imageandhi">
+    <div class="hiandpara">
+        <p class="hi">Hi, I'm Shirish 👋</p>
+        <h5 class="para">
+            I am a Computer Science and Engineering student at PSG Institute of Technology and Applied Research, passionate about transforming classroom learning into practical projects. My core interests lie in Python programming, Data Structures in C, and Frontend Development. I enjoy solving problems, building applications, and continuously exploring new technologies to expand my skill set.
+        </h5>
+    </div>
+    <img class="me" alt="me" src="me.jpeg">
+</div>
+
+<div class="Skills" id="skills">
+    <h1 class="skill">Technical Skills</h1>
+</div>
+<div class="allskills">
+    <div class="html">
+        <img class="htmlimage" width=50 height=50 src="html.webp">
+        <h1 class="htmlhead">HTML</h1>
+    </div>
+    <div class="CSS">
+        <img class="cssimage" width=50 height=50 src="css.png">
+        <h1 class="csshead">CSS</h1>
+    </div>
+    <div class="Python">
+        <img class="pythonimage" width=50 height=50 src="python.webp">
+        <h1 class="pythonhead">Python</h1>
+    </div>
+    <div class="MongoDB">
+        <img class="mongoimage" width=50 height=50 src="mongo.png">
+        <h1 class="mongohead">MongoDB</h1>
+    </div>
+    <div class="Excel">
+        <img class="excelimage" width=50 height=50 src="excel.png">
+        <h1 class="excelhead">Excel</h1>
+    </div>
+    <div class="Tensorflow">
+        <img class="tfimage" width=50 height=50 src="tf.webp">
+        <h1 class="tfhead">TensorFlow</h1>
+    </div>
+</div>
+
+<div class="Projects" id="projects">
+    <h1 class="projecthead">Projects💡</h1>
+    <div class="Project1">
+        <h1 class="p1">Matrix Encryption Website🔒</h1>
+        <h3 class="p1d">Developed a matrix encryption and decryption website for secure data transmission using Python, NumPy, and Pandas.</h3>
+    </div>
+    <div class="Project2">
+        <h1 class="p2">Color Detection🎨</h1>
+        <h3 class="p2d">Developed a color detection application using Java and OpenCV to detect color percentages and provide audio feedback for color-blind users.</h3>
+    </div>
+    <div class="Project3">
+        <h1 class="p3">AI Driven Thermal Management System🔋</h1>
+        <h3 class="p3d">Developed a machine learning integrated hardware project to regulate battery coolant flow by predicting temperature values.</h3>
+    </div>
+</div>
+
+<div class="Hackathons" id="hackathons">
+    <h1 class="hackathonhead">Hackathons</h1>
+</div>
+<div class="allhackathons">
+    <img class="jpmcimage" width=200 height=100 src="jpmc.png">
+    <img class="catimage" width=200 height=100 src="cat.png">
+</div>
+<div class="aht">
+    <h3 class="allhackathonstext">I had the opportunity to participate in the Caterpillar Hackathon, working on an object detection project using AdaBins for depth estimation, selected until pre-final round. Later, I advanced through several stages to the final Code for Good round at JP Morgan Chase (JPMC), working on Project Purnata for social impact. These experiences enhanced my expertise in AI/ML, frontend development, teamwork, and problem-solving under time constraints.</h3>
+</div>
+
+<div class="Softskills" id="softskills">
+    <h1 class="softskillhead">Soft Skills</h1>
+</div>
+<div class="allsoftskills">
+    <div class="lead">
+        <img class="leader" width=50 height=50 src="lead.webp">
+        <h1 class="leadhead">Leadership</h1>
+    </div>
+    <div class="com">
+        <img class="communication" width=50 height=50 src="coomunication.webp">
+        <h1 class="comhead">Communication</h1>
+    </div>
+    <div class="critical">
+        <img class="critics" width=60 height=50 src="critical thinking.webp">
+        <h1 class="criticshead">Critical Thinking</h1>
+    </div>
+    <div class="timemanagemet">
+        <img class="time" width=60 height=50 src="time.png">
+        <h1 class="timehead">Time Management</h1>
+    </div>
+    <div class="teamwork">
+        <img class="team" width=60 height=50 src="teamwork.png">
+        <h1 class="teamhead">Team Work</h1>
+    </div>
+</div>
+
+<div class="Contact" id="contact">
+    <div class="contactmetext">
+        <h1>Contact Me</h1>
+    </div>
+    
+    <form action="https://formspree.io/f/mdklnzwg" method="POST">
+        <label for="name" class="Name">Enter Name</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+        <label for="email" class="EmailID">Enter Email ID</label>
+        <input type="email" id="email" name="email" placeholder="Your EmailID" required>
+
+        <label for="message" class="Message">Enter Message</label>
+        <textarea id="message" name="message" placeholder="Type your message" rows="5" required></textarea>
+
+
+        <button type="submit">Send</button>
+    </form>
+</div>
+
+</body>
+</html>
